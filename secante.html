@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" href="public/fav.ico" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Secante</title>
+    <!--Google Icon Fonts-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
+    <!--Materialize CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- JS MATERIALIZE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--Google Font Oswald-->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" type="text/css" href="public/css/styles.css">
+</head>
+
+<body>
+<div class="loader-page"></div>
+  <!-- Navbar -->
+  <div class="navbar-fixed">
+      <nav>
+          <div class="nav-wrapper">
+              <a href="#!" class="brand-logo">Calculadora Métodos Numéricos</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+              <ul class="right hide-on-med-and-down">
+                  <li><a href="inicio.html">Inicio</a></li>
+                  <li><a href="biseccion.html">Biseccion</a></li>
+                  <li><a href="falsaposicion.html">Falsa Posición</a></li>
+                  <li><a href="falsaposicionmod.html">Falsa Posición Modificada</a></li>
+                  <li><a href="puntofijo.html">Punto Fijo</a></li>
+                  <li><a href="newton.html">Newton-Rhapson</a></li>
+                  <li><a href="secante.html">Secante</a></li>
+              </ul>
+          </div>
+      </nav>
+      <ul class="sidenav" id="mobile-demo">
+          <li><a href="inicio.html">Inicio</a></li>
+          <li><a href="biseccion.html">Biseccion</a></li>
+          <li><a href="falsaposicion.html">Falsa Posición</a></li>
+          <li><a href="falsaposicionmod.html">Falsa Posición Modificada</a></li>
+          <li><a href="puntofijo.html">Punto Fijo</a></li>
+          <li><a href="newton.html">Newton-Rhapson</a></li>
+          <li><a href="secante.html">Secante</a></li>
+      </ul>
+  </div>
+  
+  <!-- Maquetación pagina web -->
+  <div class="row">
+	<form onsubmit="return Secante();" class="form-horizontal" autocomplete="off">
+      <div class="col s6 m1 l3">
+        <div class="section">
+          <div class="row">
+            <div class="titulo">
+			  <h5 class="text-right" >Método - Secante</h5>
+            </div>
+            <a data-position="boton" data-delay="50" href='javascript:;' onclick='dibujar();' class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">edit</i></a>      
+			<div class="input-field col offset-s0 s8">
+			  <label for="funcion">Función</label>
+			  <input type="text" class="form-control" id="funcion" value="x^2-1e^(-2x)-3" required oninvalid="setCustomValidity('Es necesaria una función')"  oninput="setCustomValidity('')">
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col offset-s0 s8">
+              <label for="valor_xanterior">Xanterior</label>
+			  <input type="text" class="form-control" id="valor_xanterior" value="1.6" required oninvalid="setCustomValidity('Ingrese el valor inicial')"  oninput="setCustomValidity('')">
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col offset-s0 s8">
+              <label for="valor_xactual">Xactual</label>
+			  <input type="text" class="form-control" id="valor_xactual" value="1.7" required oninvalid="setCustomValidity('Ingrese el valor final')"  oninput="setCustomValidity('')">
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col offset-s0 s8">
+              <label for="cifras">Cifras significativas</label>
+			  <input type="text" class="form-control" id="cifras" value="8" required oninvalid="setCustomValidity('Ingrese el número de cifras significativas')"  oninput="setCustomValidity('')">
+            </div>
+            <div class="row"></div>
+            <div class="input-field col offset-s0 s6 ">
+              <button class="btn waves-effect waves-light right submit"  type="submit">Calcular raíz<i class="mdi-content-send right"></i></button>
+            </div>
+			</div>
+        </div>
+      </div>
+ </form>
+        </div>
+      </div>
+      <div class="col s12 m8 l9">
+         <div class="text-center" id="plot"></div>
+      </div>
+  </div>
+    <div class="container">
+	<div class="col-xs-12" id="output" style="margin-top: 5px;">
+	<hr style="border-color:red;">
+			  		<h4 class="text-center" style="margin-bottom: 5px;">Resultados</h4>
+			  		<table class="highlight" id="tabla">
+			  			<tr>
+			  				<th>i</th>
+			  				<th>&#119909;&#x1d4c1;</th>
+			  				<th>f(&#119909;&#x1d4c1;)</th>
+			  				<th>&#119909;&#x1d4ca;</th>
+			  				<th>f(&#119909;&#x1d4ca;)</th>
+			  				<th>&#119909;&#x1d45F;</th>
+			  				<th>f(&#119909;&#x1d45F;)</th>
+			  				<th>&#119890;&#x1D44E;%</th>
+			  			</tr>	  			
+			  			<!-- Values will be inserted here by scripts.js -->
+			  		</table>
+	</div> 		      
+    </div>
+
+  <footer class="page-footer">
+      <div class="container">
+          <div class="row">
+              <div class="col l6 s12">
+                  <h5 class="white-text">Desarrollado por:</h5>
+                  <p class="grey-text text-lighten-4">Daniel Andrés Pacheco Jaimes - U00113282</p>
+                  <p class="grey-text text-lighten-4">Johana Marisol Saravia Bulla - U00114796</p>
+                  <p class="grey-text text-lighten-4">Cristian David Parra Muñoz - U00114735</p>
+              </div>
+          </div>
+      </div>
+      <div class="footer-copyright">
+          <div class="container">
+              © 2019 - Unab
+              <a class="grey-text text-lighten-4 right" href="http://www.unab.edu.co/">Más información</a>
+          </div>
+      </div>
+  </footer>
+            
+ 	<!-- Scripts -->
+	<script type="text/javascript" src="public/js/math.js"></script>
+ 	<script type="text/javascript" src="public/js/d3.min.js"></script>
+	<script type="text/javascript" src="public/js/function-plot.js"></script>
+	<script type="text/javascript" src="public/js/metodosecante.js"></script>
+	<script type="text/javascript" src="public/js/graficar.js"></script>	
+	<script>
+	function dibujar() {
+    //Se llama la funcion draw
+    inicial();
+}
+	</script>
+	<!-- Ocultamos los resultados -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#output").hide();
+		});
+	</script>
+  <!-- Cargador -->
+  <script>
+      $(window).on('load', function () {
+          setTimeout(function () {
+              $(".loader-page").css({visibility:"hidden",opacity:"0"})
+          }, 1000);
+      });
+  </script>
+</body>
+</html>

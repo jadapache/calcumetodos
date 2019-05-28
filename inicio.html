@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="icon" href="public/fav.ico" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inicio</title>
+    <!--Google Icon Fonts-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
+    <!--Materialize CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--Google Font Oswald-->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" type="text/css" href="public/css/styles.css">
+    <!-- JS MATERIALIZE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+<div class="loader-page"></div>
+<!-- Navbar -->
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Calculadora Métodos Numéricos</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="biseccion.html">Biseccion</a></li>
+                <li><a href="falsaposicion.html">Falsa Posición</a></li>
+                <li><a href="falsaposicionmod.html">Falsa Posición Modificada</a></li>
+                <li><a href="puntofijo.html">Punto Fijo</a></li>
+                <li><a href="newton.html">Newton-Rhapson</a></li>
+                <li><a href="secante.html">Secante</a></li>
+            </ul>
+        </div>
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="biseccion.html">Biseccion</a></li>
+        <li><a href="falsaposicion.html">Falsa Posición</a></li>
+        <li><a href="falsaposicionmod.html">Falsa Posición Modificada</a></li>
+        <li><a href="puntofijo.html">Punto Fijo</a></li>
+        <li><a href="newton.html">Newton-Rhapson</a></li>
+        <li><a href="secante.html">Secante</a></li>
+    </ul>
+    </nav>
+</div>
+
+
+<div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="public/images/1.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3 class="light black-text text-lighten-3">Métodos Numéricos</h3>
+          <h5 class="light black-text text-lighten-3">Disponibles en el aplicativo</h5>
+        </div>
+      </li>
+      <li>
+        <img src="public/images/2.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3 class="light black-text text-lighten-3">Bisección</h3>
+          <h5 class="light black-text text-lighten-3">Este método requiere f(x), XL, XU y Cifras Significativas.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="public/images/3.jpg"> <!-- random image -->
+        <div class="caption right-align">
+          <h3 class="light black-text text-lighten-3">Falsa Posición</h3>
+          <h5 class="light black-text text-lighten-3">Este método requiere f(x), XL, XU y Cifras Significativas.</h5>
+        </div>
+      </li>
+      <li>
+          <img src="public/images/4.jpg"> <!-- random image -->
+          <div class="caption left-align">
+             <h3 class="light black-text text-lighten-3">Falsa Posición Modificada</h3>
+              <h5 class="light black-text text-lighten-3">Este método requiere f(x), XL, XU y Cifras Significativas.</h5>
+          </div>
+       </li>
+        <li>
+            <img src="public/images/5.jpg"> <!-- random image -->
+            <div class="caption right-align">
+                <h3 class="light black-text text-lighten-3">Iteracción Simple de Punto Fijo</h3>
+                <h5 class="light black-text text-lighten-3">Este método requiere f(x), XI y Cifras Significativas.</h5>
+            </div>
+        </li>
+        <li>
+            <img src="public/images/6.jpg"> <!-- random image -->
+            <div class="caption left-align">
+                <h3 class="light black-text text-lighten-3">Newton-Rhapson</h3>
+                <h5 class="light black-text text-lighten-3">Este método requiere f(x), XL y Cifras Significativas.</h5>
+            </div>
+        </li>
+        <li>
+            <img src="public/images/7.jpg"> <!-- random image -->
+            <div class="caption center-align">
+                <h3 class="light black-text text-lighten-3">Secante</h3>
+                <h5 class="light black-text text-lighten-3">Este método requiere f(x), Xanterior, Xactual y Cifras Significativas.</h5>
+            </div>
+        </li>
+    </ul>
+  </div>
+  <!-- Slider -->
+<br>
+<div class="col s6 m1 l3">
+    <hr style="border-color:darkorange;">
+    <h3 align="center"> Definición </h3>
+    <P align="center">
+        La ciencia y la tecnología describen los fenómenos reales mediante
+        modelos matemáticos. El estudio de estos modelos permite un conocimiento
+        más profundo del fenómeno, así como de su evolución futura. La
+        matemática aplicada es la rama de las matemáticas que se dedica a
+        buscar y aplicar las herramientas más adecuadas a los problemas
+        basados en estos modelos. Desafortunadamente, no siempre es posible
+        aplicar métodos analíticos clásicos por diferentes razones:
+    <UL align="center">
+        <LI>  -No se adecúan al modelo concreto.
+        <LI>  -Su aplicación resulta excesivamente compleja.
+        <LI>  -La solución formal es tan complicada que hace imposible
+               cualquier interpretación posterior.
+        <LI>  -Simplemente no existen métodos analíticos capaces de
+               proporcionar soluciones al problema.
+    </UL>
+    <P align="center">
+        En estos casos son útiles las técnicas numéricas, que mediante una
+        labor de cálculo más o menos intensa, conducen a soluciones
+        aproximadas que son siempre numérica. El importante esfuerzo de
+        cálculo que implica la mayoría de estos métodos hace que su uso esté
+        íntimamente ligado al empleo de computadores. De hecho, sin el
+        desarrollo que se ha producido en el campo de la informática
+        resultaría difícilmente imaginable el nivel actual de utilización de
+        las técnicas numéricas en ámbitos cada día más diversos<A NAME="tex2html1" HREF="https://www.uv.es/diaz/mn/node1.html"><SUP>1</SUP></A>.
+
+</div>
+	</body>
+	
+	<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Desarrollado por:</h5>
+                <p class="grey-text text-lighten-4">Daniel Andrés Pacheco Jaimes - U00113282</p>
+                <p class="grey-text text-lighten-4">Johana Marisol Saravia Bulla - U00114796</p>
+                <p class="grey-text text-lighten-4">Cristian David Parra Muñoz - U00114735</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2019 - Unab
+            <a class="grey-text text-lighten-4 right" href="http://www.unab.edu.co/">Más información</a>
+        </div>
+    </div>
+</footer>
+<!-- Slider -->
+<script type="text/javascript">
+	 $(document).ready(function(){
+         $('.slider').slider({
+             full_width: true,
+             height : 510,
+             interval: 4000
+         });
+     });
+</script>
+<!-- Loader -->
+<script>
+$(window).on('load', function () {
+setTimeout(function () {
+$(".loader-page").css({visibility:"hidden",opacity:"0"})
+}, 1000);
+});
+</script>
+</html>
+
+

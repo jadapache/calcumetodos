@@ -1,0 +1,150 @@
+.nav-wrapper {
+    background-color: #FF9800;
+    font-size: 14px;
+  }
+
+  h5 {
+    text-align:center;
+    color: #656172;
+    font-weight: normal;
+    font-size: 40x;
+    font-family: 'PT Sans', sans-serif;
+  }
+  nav .brand-logo{
+    margin: 20px;
+    line-height: 0.8em;
+    font-size: 1.9em;
+  }
+  .section{
+    width: 450px; 
+    height: 350px;
+  }
+
+  #calculator {
+    position: relative;
+    top: 1px;
+    bottom: 5px;
+    width: 995px;
+    height: 600px;
+    margin: auto;
+  }
+body {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 20px;
+}
+
+.center {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 8px;
+}
+.waves-effect.waves-brown .waves-ripple {
+   background-color: rgba(121, 85, 72, 0.65);
+ }
+
+ .page-footer {
+  background-color: #FF9800;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+}
+
+/* -----------------------------------------------------------------------------
+   	Fonts
+   ----------------------------------------------------------------------------- */
+@font-face {
+  font-family: "Raleway-Light";
+  src: url("../fonts/Raleway-Light.ttf"); }
+@font-face {
+  font-family: "Raleway-Regular";
+  src: url("../fonts/Raleway-Regular.ttf"); }
+@font-face {
+  font-family: "Raleway-Medium";
+  src: url("../fonts/Raleway-Medium.ttf"); }
+@font-face {
+  font-family: "Raleway-Bold";
+  src: url("../fonts/Raleway-Bold.ttf"); }
+/* -----------------------------------------------------------------------------
+   	tabla
+   ----------------------------------------------------------------------------- */
+hr {
+  border-color: #bbb;
+  margin: 0 -10px 50px -10px; }
+
+#plot {
+  margin-bottom: 50px; }
+  
+#plotinicial {
+  margin-bottom: 50px; }
+
+.semi-title {
+  color: #d6394b;
+  margin-right: 65px;
+  padding-bottom: 5px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #bbb;
+  border-radius: 2px; }
+
+form label {
+  font-size: 18px; }
+
+table th, table td {
+  border-color: #ccc !important;
+  border-bottom: 1px solid #ccc; }
+
+.table-style {
+  font-family: Arial;
+  width: 100%; }
+
+.table-style th {
+  font-size: 16px;
+  letter-spacing: 2px; }
+
+/* -----------------------------------------------------------------------------
+   	Loader
+   ----------------------------------------------------------------------------- */
+.loader-page {
+  position: fixed;
+  z-index: 25000;
+  background: rgb(255, 255, 255);
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:all .3s ease;
+}
+.loader-page::before {
+  content: "";
+  position: absolute;
+  border: 2px solid rgb(225, 154, 27);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border-left: 2px solid rgba(50, 150, 176,0);
+  border-top: 2px solid rgba(50, 150, 176,0);
+  animation: rotarload 1s linear infinite;
+  transform: rotate(0deg);
+}
+@keyframes rotarload {
+  0%   {transform: rotate(0deg)}
+  100% {transform: rotate(360deg)}
+}
+.loader-page::after {
+  content: "";
+  position: absolute;
+  border: 2px solid rgba(220, 103, 10, 0.5);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border-left: 2px solid rgba(50, 150, 176, 0);
+  border-top: 2px solid rgba(50, 150, 176, 0);
+  animation: rotarload 1s ease-out infinite;
+  transform: rotate(0deg);
+}
+
+/*# sourceMappingURL=styles.css.map */
+
+
